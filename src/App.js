@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Navbar from './components/Navbar/Navbar';
+import Display from './components/Display/Display';
+import { BASE_URL, API_KEY } from './constants/constants.js'
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun <span role="img" aria-label='go!'>🚀</span>!
-      </p>
+      <Navbar />
+      <Display />
     </div>
   );
 }
