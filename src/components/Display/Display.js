@@ -1,32 +1,78 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "../../App.css";
+import styled from 'styled-components';
 
 export default function Display(props) {
     const {date, explanation, hdurl, title} = props.podData;
 
     return (
-        <section class="display_section">
+        <DisplaySection className="display_section">
 
-            <div class="display">
+            <div className="display">
 
-                <span class="display_desc">
+                <span className="display_desc">
 
-                    <p class="title">{ title } • { date }</p>
+                    <p className="title">{ title } • { date }</p>
 
                     <hr />
 
-                    <p class="explanation">{ explanation }</p>
+                    <p className="explanation">{ explanation }</p>
 
                 </span>
 
             </div>
 
-            <div class="pod_image">
+            <div className="pod_image">
 
                 <img src={hdurl} alt="Nasa POD"></img>
 
             </div>
 
-        </section>
+        </DisplaySection>
     )
 }
+
+const DisplaySection = styled.section`
+
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 62.5%;
+
+
+.display {
+  width: 30%;
+  padding: 1.5rem;
+  overflow: scroll;
+}
+
+.display::-webkit-scrollbar {
+  display: none;
+}
+
+.title {
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.explanation {
+  margin-top: 1.5rem;
+  font-size: 1.6rem;
+}
+
+.pod_image {
+  width: 65%;
+  overflow: scroll;
+}
+
+.pod_image::-webkit-scrollbar {
+  display: none;
+}
+
+.pod_image img {
+  /* max-height: 100%; */
+  max-width: 100%;
+  object-fit: fill;
+}
+`

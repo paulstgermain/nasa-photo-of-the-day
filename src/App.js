@@ -4,8 +4,9 @@ import Navbar from './components/Navbar/Navbar';
 import Display from './components/Display/Display';
 import { BASE_URL, API_KEY } from './constants/constants.js';
 import "./App.css";
+import styled from 'styled-components';
 
-function App() {
+export default function App() {
   const [podData, setPodData] = useState({});
 
   useEffect(() => {
@@ -19,11 +20,15 @@ function App() {
   
 
   return (
-    <div className="App">
+    <AppDiv className="App">
       <Navbar />
       <Display podData={podData} />
-    </div>
+    </AppDiv>
   );
 }
 
-export default App;
+const AppDiv = styled.div`
+  background-color: #333333;
+  color: #f6f6f6;
+  width: 100%;
+`
