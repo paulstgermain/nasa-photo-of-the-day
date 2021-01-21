@@ -20,6 +20,9 @@ const Nav = styled.nav`
   justify-content: flex-start;
   align-items: center;
   padding-left: 5%;
+  background-color: #666666;
+  margin-bottom: 2%;
+  box-shadow: 2px 2px 2px 2px rgba(33, 33, 33, 0.5);
 
 
 img {

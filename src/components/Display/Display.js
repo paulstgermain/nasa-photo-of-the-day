@@ -12,10 +12,6 @@ export default function Display(props) {
 
                 <span className="display_desc">
 
-                    <p className="title">{ title } • { date }</p>
-
-                    <hr />
-
                     <p className="explanation">{ explanation }</p>
 
                 </span>
@@ -23,6 +19,8 @@ export default function Display(props) {
             </div>
 
             <div className="pod_image">
+
+                <p className="title">{ title } • { date }</p>
 
                 <img src={hdurl} alt="Nasa POD"></img>
 
@@ -34,16 +32,21 @@ export default function Display(props) {
 
 const DisplaySection = styled.section`
 
-  height: 100vh;
+  height: auto;
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column-reverse;
+  justify-content: space-around;
+  align-items: center;
   font-size: 62.5%;
 
 
 .display {
-  width: 30%;
+  width: 70%;
   padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: scroll;
 }
 
@@ -62,8 +65,11 @@ const DisplaySection = styled.section`
 }
 
 .pod_image {
-  width: 65%;
-  overflow: scroll;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .pod_image::-webkit-scrollbar {
@@ -72,7 +78,9 @@ const DisplaySection = styled.section`
 
 .pod_image img {
   /* max-height: 100%; */
-  max-width: 100%;
+  /* max-width: 100%; */
+  width: 50%;
   object-fit: fill;
 }
+
 `
